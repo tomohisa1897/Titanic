@@ -38,6 +38,7 @@ imp.sort_values("imp", ascending=False, ignore_index=True)
 imp.sort_values("imp", ascending=False, ignore_index=True)
 imp.sort_values("imp", ascending=False, ignore_index=True)
 imp.sort_values("imp", ascending=False, ignore_index=True)
+<br>
 
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
