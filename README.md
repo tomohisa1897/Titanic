@@ -32,3 +32,5 @@ Embarked タイタニック号に乗った港
 
 <CODE>
 imp.sort_values("imp", ascending=False, ignore_index=True)
+</CODE>
+imp.sort_values("imp", ascending=False, ignore_index=True)
