@@ -28,6 +28,10 @@ Fare 料⾦<br>
 Cabin 客室番号<br>
 Embarked タイタニック号に乗った港<br>
 
+<b>Titanicデータの構成</b><br>
+gener_submission.csv : 乗客のIDと生死のリスト<br>
+test.csv : 生死の不明な乗客リスト<br>
+train.csv : 生死のわかっている乗客リスト<br>
 
 
 <CODE>
@@ -40,6 +44,8 @@ imp.sort_values("imp", ascending=False, ignore_index=True)
 imp.sort_values("imp", ascending=False, ignore_index=True)
 <br>
 <br>
+
+![alt text](image.png)<br>
 
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
