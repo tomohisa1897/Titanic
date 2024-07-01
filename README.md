@@ -37,7 +37,7 @@ train.csv : 生死のわかっている乗客リスト<br>
 #0.Titanicデータのマウント
 from google.colab import drive
 drive.mount('/content/drive')
-
+<br>
 #1.データ理解・可視化
 #1.1 ライブラリのインポート
 import numpy as np
