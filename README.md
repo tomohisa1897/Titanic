@@ -34,17 +34,35 @@ test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト<br>
 
 <CODE>
-https://colab.research.google.com/drive/1KlF-17LEoBnk7ZduWg6TaoaDYsAiYekq?authuser=1#scrollTo=5VyISYpZNRli&line=1&uniqifier=1
-<br>
+#0.Titanicデータのマウント
+from google.colab import drive
+drive.mount('/content/drive')
+
+#1.データ理解・可視化
+#1.1 ライブラリのインポート
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+#Numoy:行列計算や数値を扱う用のモジュール
+#Pandas:表形式のデータを扱う用のモジュール
+#Matplotlib:グラフ描画用モジュール
+#Seaborn:Matplotlibよりもきれいなグラフを描画するためのモジュール
+
+#1.2 データの読み込み
+# PATHの設定
+dir_path = '/content/drive/MyDrive/datascience-for-beginner/titanic/'
+# 学習データの読み込み
+train_df = pd.read_csv(dir_path + 'train.csv')
+# テストデータの読み込み
+test_df = pd.read_csv(dir_path + 'test.csv')
 
 
 
 
-
-
-
-
-
+</CODE>
 
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
