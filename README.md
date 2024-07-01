@@ -33,19 +33,18 @@ gener_submission.csv : 乗客のIDと生死のリスト<br>
 test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト<br>
 
-
 <CODE>
-imp.sort_values("imp", ascending=False, ignore_index=True)
-imp.sort_values("imp", ascending=False, ignore_index=True)
-imp.sort_values("imp", ascending=False, ignore_index=True)
-</CODE>
-imp.sort_values("imp", ascending=False, ignore_index=True)
-imp.sort_values("imp", ascending=False, ignore_index=True)
-imp.sort_values("imp", ascending=False, ignore_index=True)
-<br>
+https://colab.research.google.com/drive/1KlF-17LEoBnk7ZduWg6TaoaDYsAiYekq?authuser=1#scrollTo=5VyISYpZNRli&line=1&uniqifier=1
 <br>
 
-![alt text](image.png)<br>
+
+
+
+
+
+
+
+
 
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
