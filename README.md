@@ -37,9 +37,9 @@ Embarked タイタニック号に乗った港<br>
 <b>□Titanicデータの構成□</b><br>
 gener_submission.csv : 乗客のIDと生死のリスト<br>
 test.csv : 生死の不明な乗客リスト<br>
-train.csv : 生死のわかっている乗客リスト
+train.csv : 生死のわかっている乗客リスト<br>
 
-<b>□解析□</b>
+<b>□解析□</b><br>
 <CODE>
 # 0.Titanicデータのマウント
 from google.colab import drive
