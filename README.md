@@ -178,7 +178,7 @@ df2 = df.drop(columns=['Cabin', 'Fare', 'Ticket', 'SibSp','Parch', 'Name'])
 #　カラムを表示して整理できているか確認する。
 # df2を表⽰する。
 df2.head()
-<br
+<br>
 # 結果
 <img src= "表24.jpg">
 <br>
