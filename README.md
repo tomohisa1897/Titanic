@@ -9,7 +9,7 @@ https://www.kaggle.com/competitions/titanic<br>
 今後の課題として、LightGBMモデルを用いたパラメータ設定ができるようにしたいと思っています。<br>
 また、検証方法はホールドアウト検証としましたが、クロスバリデーションも取り入れていきます。<br>
 
-<b>環境</b>
+<b>環境</b><br>
 【言語】Python<br>
 【OS】Windows<br>
 Google Colaboratory上でPython実行。<br>
@@ -107,7 +107,6 @@ dtype: int64
 #1.4 データの理解
 # 今回はKaggleコンペなので、学習用データとテストデータが分かれているが、実際の現場ではデータに区別はないため、
 # 2つのデータを結合する。
-
 # 学習データとテストデータを連結する
 df = pd.concat([train_df, test_df], ignore_index=True)
 # 結合がうまくできているか確認する。
@@ -121,7 +120,7 @@ df.shape
 # 最後の5⾏を確認
 df.tail()
 # 結果
-<img src="https://drive.google.com/file/d/1V6lXqNo4Xp1qKVg338wgU0tCIEVaqfFs/view?usp=sharing">
+<img src="https://drive.google.com/file/d/1V6lXqNo4Xp1qKVg338wgU0tCIEVaqfFs/view">
 <br>
 
 
