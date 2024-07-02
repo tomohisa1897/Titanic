@@ -120,7 +120,7 @@ df.shape
 # 最後の5⾏を確認
 df.tail()
 # 結果
-<img src= "https://drive.google.com/file/d/1V6lXqNo4Xp1qKVg338wgU0tCIEVaqfFs/view">
+<img src= "https://github.com/tomohisa1897/Titanic/blob/main/%E8%A1%A81.jpg">
 <br>
 
 
