@@ -203,7 +203,7 @@ plt.figure(figsize=(6, 4))
 sns.countplot(data=df2, x="Embarked")
 plt.show()
 <br>
-<img src= "表7.png">
+<img src= "表6.png">
 <br>
 # ほとんどがS港から乗船していることがわからるので、欠損値をSで補完する。
 # データに変更を加える際に、安全に変更を加えていきたいので、データをコピーして進める。
@@ -241,7 +241,7 @@ sns.histplot(df3["Age"], kde=False, bins=8)
 plt.show()
 <br>
 # 結果
-<img src= "表8.jpg">
+<img src= "表7.png">
 <br>
 # 20～30代が最も多いことがわかる。
 # 年齢の中央値で補完する。
