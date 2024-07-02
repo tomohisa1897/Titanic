@@ -40,7 +40,7 @@ test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト
 
 <CODE>
-□解析□
+□□解析□□
 # 0.Titanicデータのマウント
 from google.colab import drive
 drive.mount('/content/drive')
