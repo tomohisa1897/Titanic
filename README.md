@@ -52,7 +52,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline
 <br>
-# Numoy:行列計算や数値を扱う用のモジュール
+# Numpy:行列計算や数値を扱う用のモジュール
 # Pandas:表形式のデータを扱う用のモジュール
 # Matplotlib:グラフ描画用モジュール
 # Seaborn:Matplotlibよりもきれいなグラフを描画するためのモジュール
@@ -180,7 +180,7 @@ df2 = df.drop(columns=['Cabin', 'Fare', 'Ticket', 'SibSp','Parch', 'Name'])
 df2.head()
 <br
 # 結果
-<img src= "表6.png">
+<img src= "表24.jpg">
 <br>
 # 2.1 欠損値の補充
 # データ内の⽋損値を確認する。
