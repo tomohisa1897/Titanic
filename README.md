@@ -39,7 +39,8 @@ gener_submission.csv : 乗客のIDと生死のリスト<br>
 test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト
 
-<b>□解析□</b><CODE>
+<b>□解析□</b>
+<CODE>
 # 0.Titanicデータのマウント
 from google.colab import drive
 drive.mount('/content/drive')
