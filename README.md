@@ -1,21 +1,21 @@
-<b>タイタニック号沈没の際の生存者を予想する</b>
+<b>□タイタニック号沈没の際の生存者を予想します□</b>
 
 Kaggleコンペ<br>
 https://www.kaggle.com/competitions/titanic<br>
 で、タイタニック号沈没の際の生存者を予想します。<br>
 
-<b>データ解析について</b><br>
+<b>□データ解析について□</b><br>
 今回は決定木モデルを使用したベースラインの作成について記述しています。<br>
 今後の課題として、LightGBMモデルを用いたパラメータ設定ができるようにしたいと思っています。<br>
 また、検証方法はホールドアウト検証としましたが、クロスバリデーションも取り入れていきます。<br>
 
-<b>環境</b><br>
+<b>□環境□</b><br>
 【言語】Python<br>
 【OS】Windows<br>
 Google Colaboratory上でPython実行。<br>
 GitHubのローカルリポジトリは、Visual Studio Codeで編集。<br>
 
-<b>背景</b><br>
+<b>□背景□</b><br>
 1912年4月15日、豪華客船タイタニック号が氷山とぶつかって沈没しました。<br>
 乗客約2,000名のうち、2/3に及ぶ乗客が死亡した沈没事故です。<br>
 すでに生死がわかっている学習用データを用いて、生死の不明な乗客リストの生死を予想します。<br>
@@ -34,12 +34,11 @@ Fare 料⾦<br>
 Cabin 客室番号<br>
 Embarked タイタニック号に乗った港<br>
 
-<b>Titanicデータの構成</b><br>
+<b>□Titanicデータの構成□</b><br>
 gener_submission.csv : 乗客のIDと生死のリスト<br>
 test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト<br>
 
-<b>コード</b><br>
 <CODE>
 # 0.Titanicデータのマウント
 from google.colab import drive
@@ -67,7 +66,7 @@ train_df = pd.read_csv(dir_path + 'train.csv')
 test_df = pd.read_csv(dir_path + 'test.csv')
 <br>
 # 1.3 欠損値の確認
-#データ内の⽋損値を確認する
+# データ内の⽋損値を確認する
 train_df.isnull().sum()
 <br>
 # 結果
