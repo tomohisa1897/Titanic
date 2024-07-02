@@ -139,26 +139,26 @@ plt.show()
 <img src= "表2.png">
 <br>
 # データの可視化②Pandas
-# pandasで棒グラフを作成する
+# pandasで棒グラフを作成する。
 tmp.plot(kind='bar', figsize=(6, 4))
 <br>
 # 結果
 <img src= "表3.png">
 <br>
 # データの可視化③Seaborn
-# グラフの⼤きさを設定
+# グラフの⼤きさを設定。
 plt.figure(figsize=(6, 4))
-# 性別の数を確認してみる
+# 性別の数を確認してみる。
 sns.countplot(data=df, x="Sex")
 plt.show()
 <br>
 # 結果
 <img src= "表4.png">
 <br>
-#Survivedカラムの内訳を表示する
-# グラフの⼤きさを設定
+#Survivedカラムの内訳を表示する。
+# グラフの⼤きさを設定。
 plt.figure(figsize=(6, 4))
-# 性別の数を確認してみる
+# 性別の数を確認してみる。
 sns.countplot(data=train_df, x="Survived")
 plt.show()
 <br>
@@ -173,17 +173,17 @@ plt.show()
 # ・ 性別
 # ・ 出発した港
 <br>
-# 今回使⽤しないカラムを削除する
+# 今回使⽤しないカラムを削除する。
 df2 = df.drop(columns=['Cabin', 'Fare', 'Ticket', 'SibSp','Parch', 'Name'])
 #　カラムを表示して整理できているか確認する。
-# df2を表⽰する
+# df2を表⽰する。
 df2.head()
 <br
 # 結果
 <img src= "表6.png">
 <br>
 # 2.1 欠損値の補充
-# データ内の⽋損値を確認する
+# データ内の⽋損値を確認する。
 df2.isnull().sum()
 <br>
 # 結果
@@ -195,11 +195,11 @@ Age            263
 Embarked         2
 dtype: int64
 <br>
-# Embarkedの欠損値を補完する
+# Embarkedの欠損値を補完する。
 # 今回は最も乗客の多い港（タイタニック号に乗船した港）で欠損値を補完する。
-# グラフの⼤きさを設定
+# グラフの⼤きさを設定。
 plt.figure(figsize=(6, 4))
-# 出発した港の数を確認してみる
+# 出発した港の数を確認してみる。
 sns.countplot(data=df2, x="Embarked")
 plt.show()
 <br>
@@ -207,25 +207,25 @@ plt.show()
 <br>
 # ほとんどがS港から乗船していることがわからるので、欠損値をSで補完する。
 # データに変更を加える際に、安全に変更を加えていきたいので、データをコピーして進める。
-# 元データをコピー
+# 元データをコピー。
 df3 = df2.copy()
 # ⽋損値の補完
 df3["Embarked"] = df3["Embarked"].fillna('S')
-# Embarkedの⽋損値を再度確認する
+# Embarkedの⽋損値を再度確認する。
 print('⽋損値の数︓', df3["Embarked"].isnull().sum())
 <br>
 # 結果
 ⽋損値の数︓ 0
 <br>
 # Ageの欠損値を補完する。
-# Ageの⽋損値を確認する
+# Ageの⽋損値を確認する。
 print('⽋損値の数︓', df3["Age"].isnull().sum())
 <br>
 # 結果
 ⽋損値の数︓ 263
 <br>
 # 乗客の年齢のうち、最も多い年代で欠損値を補完する。
-# 年齢の最⼩値と最⼤値を確認
+# 年齢の最⼩値と最⼤値を確認。
 print('最⼩値:', df3["Age"].min())
 print('最⼤値:', df3["Age"].max())
 <br>
@@ -234,24 +234,24 @@ print('最⼤値:', df3["Age"].max())
 最⼤値: 80.0
 <br>
 # ヒストグラムを8つのビンに分割して作成する。
-# グラフの⼤きさを設定
+# グラフの⼤きさを設定。
 plt.figure(figsize=(6, 4))
-# ヒストグラムを作成する
+# ヒストグラムを作成する。
 sns.histplot(df3["Age"], kde=False, bins=8)
 plt.show()
 <br>
 # 結果
-<img src= "表8.png">
+<img src= "表8.jpg">
 <br>
 # 20～30代が最も多いことがわかる。
 # 年齢の中央値で補完する。
 # df3をコピー
 df4 = df3.copy()
-# 年齢の中央値を計算
+# 年齢の中央値を計算。
 age_median = df4["Age"].median()
-# 年齢の⽋損値を中央値で補完する
+# 年齢の⽋損値を中央値で補完する。
 df4["Age"] = df4["Age"].fillna(age_median)
-# 年齢の⽋損値の数を確認する
+# 年齢の⽋損値の数を確認する。
 print('⽋損値の数︓', df4["Age"].isnull().sum())
 <br>
 # 結果
@@ -260,80 +260,80 @@ print('⽋損値の数︓', df4["Age"].isnull().sum())
 # 2.2 カテゴリ変数の数値変換
 # 2.2.1 乗船した港の数値変換
 # ワンホットエンコーディング「該当する部分には1, そうではない部分には0」を使用する。
-# 乗船した港（Embarked）をワンホットエンコーディングしてみる
+# 乗船した港（Embarked）をワンホットエンコーディングしてみる。
 pd.get_dummies(df4['Embarked'])
 <br>
 # 結果
-<img src= "表10.png">
+<img src= "表10.jpg">
 <br>
-# 変数ohe_embarkedにEmbarkedの変換結果を⼊れる
+# 変数ohe_embarkedにEmbarkedの変換結果を⼊れる。
 ohe_embarked = pd.get_dummies(df4['Embarked'], prefix="Embarked")
 ohe_embarked.head()
 <br>
 # 結果
-<img src= "表11.png">
+<img src= "表11.jpg">
 <br>
-# ワンホットエンコーディングの結果を元のデータフレームに連結する
+# ワンホットエンコーディングの結果を元のデータフレームに連結する。
 df5 = pd.concat([df4, ohe_embarked], axis=1)
 df5.head()
 <br>
 # 結果
-<img src= "表12.png">
+<img src= "表12.jpg">
 <br>
 # カテゴリ変数が格納されている元のカラム"Embarked"を削除する。
-# Embarkedを削除する
+# Embarkedを削除する。
 df6 = df5.drop(columns=["Embarked"])
 df6.head()
 <br>
 # 結果
-<img src= "表13.png">
+<img src= "表13.jpg">
 <br>
 # 2.2.2 性別の数値変換
 # 性別は男女2つしかないので、ラベルエンコーディングを用いる。
-# ラベルエンコーディングした結果を反映する
+# ラベルエンコーディングした結果を反映する。
 df6['Sex'] = pd.get_dummies(df6["Sex"], drop_first=True)
-# データフレームの先頭5⾏を確認する
+# データフレームの先頭5⾏を確認する。
 df6.head()
 <br>
 # 結果
-<img src= "表14.png">
+<img src= "表14.jpg">
 <br>
 # 3.データセットの作成
 # 学習データとテストデータの分割をする。Sruvivedカラムが空だったらテストデータ。
-# Survivedが空ではないデータをtrain_dfに格納する
+# Survivedが空ではないデータをtrain_dfに格納する。
 train = df6[~df6["Survived"].isnull()]
-# Survivedが空のデータをtest_dfに格納する
+# Survivedが空のデータをtest_dfに格納する。
 test = df6[df6["Survived"].isnull()]
-# trainの中⾝を確認する
+# trainの中⾝を確認する。
 train.head()
 <br>
 # 結果
-<img src= "表15.png">
+<img src= "表15.jpg">
 <br>
-# trainの中⾝を確認する
+# trainの中⾝を確認する。
 train.tail()
 <br>
 # 結果
-<img src= "表16.png">
+<img src= "表16.jpg">
 <br>
-# testの中⾝を確認する
+# testの中⾝を確認する。
 test.head()
 <br>
 # 結果
-<img src= "表17.png">
+<img src= "表17.jpg">
 <br>
 # 学習データとテストデータが分割できた。
-# testからSurvivedカラムを削除
+# testからSurvivedカラムを削除。
 test = test.drop(columns=['Survived'])
 test.head()
 <br>
 # 結果
-<img src= "表18.png">
+<img src= "表18.jpg">
 <br>
 # 説明変数と目的変数に分ける。
-# ⽬的変数をy_trainに格納する
+# ⽬的変数をy_trainに格納する。
 y_train = train["Survived"]
-# 説明変数をX_trainに格納する
+# 説明変数をX_trainに格納する。
 X_train = train.drop(columns=['Survived', "PassengerId"])
 print("元のdf", train.shape)
 print("説明変数", X_train.shape)
@@ -348,7 +348,7 @@ print("⽬的変数", y_train.shape)
 X_train.head()
 <br>
 # 結果
-<img src= "表19.png">
+<img src= "表19.jpg">
 <br>
 # ⽬的変数を確認
 y_train.head()
@@ -366,16 +366,16 @@ Name: Survived, dtype: float64
 # 決定⽊のインポート
 from sklearn.tree import DecisionTreeClassifier
 # 乱数を42で固定する。
-# 決定⽊モデルの準備
+# 決定⽊モデルの準備。
 model = DecisionTreeClassifier(random_state=42)
-# 決定⽊モデルの作成
+# 決定⽊モデルの作成。
 model.fit(X_train, y_train)
 <br>
 # 5.モデルの評価
 # 今回はホールドアウト検証を用いる。
-# train_test_splitをimportする
+# train_test_splitをimportする。
 from sklearn.model_selection import train_test_split
-# 学習⽤と評価⽤のデータに分割する
+# 学習⽤と評価⽤のデータに分割する。
 x_tr, x_va, y_tr, y_va = train_test_split(
 X_train, y_train, test_size=0.2, random_state=42
 )
@@ -441,9 +441,9 @@ y_tr_pred = model.predict(x_tr)
 y_va_pred = model.predict(x_va)
 # データ全体でどのくらいの精度になっているか確認する。
 from sklearn.metrics import accuracy_score
-# 学習⽤データの正解率を計算する
+# 学習⽤データの正解率を計算する。
 accuracy_tr = accuracy_score(y_tr, y_tr_pred)
-# 評価⽤データの正解率を計算する
+# 評価⽤データの正解率を計算する。
 accuracy_va = accuracy_score(y_va, y_va_pred)
 print("学習⽤: ", accuracy_tr)
 print("評価⽤: ", accuracy_va)
@@ -453,16 +453,16 @@ print("学習⽤: ", accuracy_tr)
 print("評価⽤: ", accuracy_va)
 <br>
 # 6.テストデータの予測
-# testの中⾝を確認する
+# testの中⾝を確認する。
 test.head()
 <br>
 # 結果
-<img src= "表20.png">
+<img src= "表20.jpg">
 <br>
 # モデル作成にPassenger Idは不要なので、削除して予測値を出す。
-# 変数testからPassengerIdを削除する
+# 変数testからPassengerIdを削除する。
 x_test = test.drop(columns=["PassengerId"])
-# x_testを使ってモデルの予測値を計算する
+# x_testを使ってモデルの予測値を計算する。
 y_test_pred = model.predict(x_test)
 # y_test_predの先頭5つを確認する。
 y_test_pred[:5]
@@ -476,18 +476,18 @@ test['Survived'] = y_test_pred
 test.head()
 <br>
 # 結果
-<img src= "表21.png">
+<img src= "表21.jpg">
 <br>
 # モデルの予測結果、Survivedが反映された。
 <br>
 # 7.Kaggle提出用データの作成
 # 提出⽤のデータフレームを作成する
 submit_df = test[['PassengerId', 'Survived']].set_index('PassengerId')
-# 先頭5⾏を確認する
+# 先頭5⾏を確認する。
 submit_df.head()
 <br>
 # 結果
-<img src= "表22.png">
+<img src= "表22.jpg">
 <br>
 # Survivedが小数表記になっているので、整数に変換する。
 # 予測結果を整数に変換する。
@@ -495,7 +495,7 @@ submit_df["Survived"] = submit_df["Survived"].astype(int)
 submit_df.head()
 <br>
 # 結果
-<img src= "表23.png">
+<img src= "表23.jpg">
 <br>
 # CSVの作成
 submit_df.to_csv("submission.csv")
