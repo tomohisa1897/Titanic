@@ -40,6 +40,7 @@ test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト<br>
 
 <b>コード</b><br>
+<CODE>
 #0.Titanicデータのマウント
 from google.colab import drive
 drive.mount('/content/drive')
@@ -128,7 +129,7 @@ df.tail()
 
 
 
-
+</CODE>
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
 評価モデルは、簡易的な決定木モデルとしましたが、LightGBMモデルを用いて、パラメータ設定ができるようにしたいと思っています。<br>
