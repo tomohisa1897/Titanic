@@ -52,10 +52,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline
 <br>
-#Numoy:行列計算や数値を扱う用のモジュール
-#Pandas:表形式のデータを扱う用のモジュール
-#Matplotlib:グラフ描画用モジュール
-#Seaborn:Matplotlibよりもきれいなグラフを描画するためのモジュール
+# Numoy:行列計算や数値を扱う用のモジュール
+# Pandas:表形式のデータを扱う用のモジュール
+# Matplotlib:グラフ描画用モジュール
+# Seaborn:Matplotlibよりもきれいなグラフを描画するためのモジュール
 <br>
 # 1.2 データの読み込み
 # PATHの設定
@@ -66,7 +66,7 @@ train_df = pd.read_csv(dir_path + 'train.csv')
 test_df = pd.read_csv(dir_path + 'test.csv')
 <br>
 # 1.3 欠損値の確認
-# データ内の⽋損値を確認する
+# データ内の⽋損値を確認する。
 train_df.isnull().sum()
 <br>
 # 結果
@@ -84,8 +84,8 @@ Cabin          687
 Embarked         2
 dtype: int64
 <br>
-#学習用データtrain_dfでは、Age,Cabin,Embakredに欠損が認められる。
-# 同様にテスト用データtest_dfでも、データ内の⽋損値を確認する
+# 学習用データtrain_dfでは、Age,Cabin,Embakredに欠損が認められる。
+# 同様にテスト用データtest_dfでも、データ内の⽋損値を確認する。
 test_df.isnull().sum()
 <br>
 # 結果
@@ -102,25 +102,48 @@ Cabin          327
 Embarked         0
 dtype: int64
 <br>
-#テスト用データtest_dfでは、Age,Cabinの他、Fareでも欠損が認められる。Embarkedでの欠損は無し。
+# テスト用データtest_dfでは、Age,Cabinの他、Fareでも欠損が認められる。Embarkedでの欠損は無し。
 <br>
 # 1.4 データの理解
-#今回はKaggleコンペなので、学習用データとテストデータが分かれているが、実際の現場ではデータに区別はないため、2つのデータを結合する。
-# 学習データとテストデータを連結する
+# 今回はKaggleコンペなので、学習用データとテストデータが分かれているが、実際の現場ではデータに区別はないため、2つのデータを結合する。
+# 学習データとテストデータを連結する。
 df = pd.concat([train_df, test_df], ignore_index=True)
-#結合がうまくできているか確認する。
-#連結したデータの⼤きさを確認する
+# 結合がうまくできているか確認する。
+# 連結したデータの⼤きさを確認する。
 df.shape
+<br>
 # 結果
 (1309, 12)
 <br>
-#学習用データが891行、テスト用データが418行だったので結合に成功していると言える。(891+418=1309)
-#テスト用データにはSurvivdedのカラムがないので、欠損しているはずである。本当に欠けているか確認する。
-# 最後の5⾏を確認
+# 学習用データが891行、テスト用データが418行だったので結合に成功していると言える。(891+418=1309)
+# テスト用データにはSurvivdedのカラムがないので、欠損しているはずである。本当に欠けているか確認する。
+# 最後の5⾏を確認。
 df.tail()
+<br>
 # 結果
 <img src= "https://github.com/tomohisa1897/Titanic/blob/main/%E8%A1%A81.jpg">
 <br>
+# Survivedの中身が欠損していることが確認できた。
+<br>
+#1.5 データの可視化①Matplotlib
+# ①性別ごとにグループ分けして、②各性別ごとにカウントする。
+df.groupby('Sex')["PassengerId"].count()
+tmp = df.groupby('Sex')["PassengerId"].count()
+# グラフの⼤きさを設定
+plt.figure(figsize=(6, 4))
+# 性別の数を確認してみる。
+plt.bar(tmp.index, tmp.values)
+plt.show()
+<br>
+# 結果
+<img src= "表2.png">
+<br>
+
+
+
+
+
+
 
 
 
