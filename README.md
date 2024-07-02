@@ -39,7 +39,7 @@ gener_submission.csv : 乗客のIDと生死のリスト<br>
 test.csv : 生死の不明な乗客リスト<br>
 train.csv : 生死のわかっている乗客リスト<br>
 
-<CODE>
+<b>コード</b><br>
 #0.Titanicデータのマウント
 from google.colab import drive
 drive.mount('/content/drive')
@@ -120,7 +120,7 @@ df.shape
 # 最後の5⾏を確認
 df.tail()
 # 結果
-<img src="https://drive.google.com/file/d/1V6lXqNo4Xp1qKVg338wgU0tCIEVaqfFs/view">
+<img src= "https://drive.google.com/file/d/1V6lXqNo4Xp1qKVg338wgU0tCIEVaqfFs/view">
 <br>
 
 
@@ -128,7 +128,6 @@ df.tail()
 
 
 
-</CODE>
 
 <b>課題</b><br>
 今回は、IDと生存フラグを除く10属性のうち、2属性で評価しましたが、残り8属性についても追加して確認したいです。<br>
